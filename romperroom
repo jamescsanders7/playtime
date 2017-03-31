@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html>
+
+        <head>
+                <title>My Toys</title>
+
+        <style>
+
+        @keyframes tfXanim {
+
+                25% {
+                        transform: translateX(200px) rotateX(180deg);
+
+                }
+                50% {
+                        transform: translateX(400px) rotateX(360deg);
+                }
+                75% { perspective-origin: 0px 0px;
+                        transform: translateX(200px) rotateX(-180deg);
+                }
+                100% {
+                        transform: rotateX(-360deg);
+                }
+        }
+
+@keyframes tfYanim {
+
+                25% {
+                        transform: translateX(200px) rotateY(180deg);
+
+                }
+                50% {
+                        transform: translateX(400px) rotateY(360deg);
+                }
+                75% { perspective-origin: 0px 0px;
+                        transform: translateX(200px) rotateY(-180deg);
+                }
+                100% {
+                        transform: rotateY(-360deg);
+                }
+        }
+
+@keyframes tfZanim {
+
+                25% {
+                        transform: translateX(200px) rotateZ(180deg);
+
+                }
+                50% {
+                        transform: translateX(400px) rotateZ(360deg);
+                }
+                75% { perspective-origin: 0px 0px;
+                        transform: translateX(200px) rotateZ(-180deg);
+                }
+                100% {
+                        transform: rotateZ(-360deg);
+                }
+        }
+
+
+        @keyframes rectColChange        {
+                0% { background-color: blue;
+                        top: 0px;
+                        left: 0px;
+                }
+                25% { background-color: green;
+                        top: 0px;
+                        left: 200px;
+                }
+                50% { background-color: red;
+                        top: 200px;
+                        left: 200px;
+                }
+                75% { background-color: purple;
+                        top: 200px;
+                        left: 0px;
+                }
+                100% { background-color: yellow;
+                        top: 0px;
+                        left: 0px;
+                }
+        }
+
+        body    {
+                perspective: 100px;
+        }
+
+        #flippers       {
+                height: 400px;
+                width: 600px;
+                top: 0px;
+                left: 0px;
+                position: absolute;
+        }
+
+        #flippers > div {
+                margin-bottom: 70px;
+                padding: 0px;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 150px;
+                height: 50px;
+                background: #eeeeee;
+                border: 1px solid green;
+                color: green;
+                font-family: Verdana, sons-serif;
+                font-size: 12px;
+                display: block;
+                animation: tfXanim 6s ease-in-out 4;
+}
+
+        #sliders        {
+                height: 400px;
+                width: 400px;
+                top: 0px;
+                left: 600px;
+                position: absolute;
+        }
+
+        #psy    {
+                height: 400px;
+                width: 600px;
+                top: 400px;
+                left: 150px;
+                border: 1px dashed black;
+                position: absolute;
+        }
+
+        #first  {
+                height: 40px;
+                width: 200px;
+                position: absolute;
+                top: 160px;
+                left: 200px;
+                border: 1px solid black;
+                z-index: 4;
+        }
+
+        #second {
+                height: 120px;
+                width: 300px;
+                position: absolute;
+                top: 120px;
+                left: 150px;
+                border: 1px solid black;
+                z-index: 3;
+        }
+
+        #third  {
+                height: 200px;
+                width: 400px;
+                position: absolute;
+                top: 80px;
+                left: 100px;
+                border: 1px solid black;
+                z-index: 2;
+        }
+
+        #fourth {
+                height: 280px;
+                width: 500px;
+                position: absolute;
+                top: 40px;
+                left: 50px;
+                border: 1px solid black;
+                z-index: 1;
+
+        }
+
+        #fifth  {
+                height: 360px;
+                width: 600px;
+                position: absolute;
+                top: 00px;
+                left: 0px;
+                border: 1px solid black;
+        }
+
+        #rectAnim {
+                margin-bottom: 70px;
+                padding: 0px;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 150px;
+                height: 50px;
+                position: relative;
+                background: #eeeeee;
+                border: 1px solid green;
+                color: green;
+                font-family: Verdana, sons-serif;
+                font-size: 12px;
+                display: block;
+                animation: rectColChange 8s ease-out 4;
+                animation-fill-mode: forward;
+                animation-direction: reverse;
+}
+
+        #rectAnim.animate       {
+                animation: rectColChange 8s ease-in-out 4 normal;
+        }
+
+        p       {
+                font-family: Verdana, sans-serif;
+                font-style: italic;
+                text-align: center;
+        }
+
+        .txformX        { perspective-origin: 0px 0px;
+                animation: tfXanim 8s ease-in-out 1 normal;
+                }
+
+        .txformY        { perspective-origin: 0px 0px;
+                animation: tfXanim 8s ease-in-out 1 normal;
+                }
+
+        .txformZ        { perspective-origin: 0px 0px;
+                animation: tfZanim 8s ease-in-out 1 normal;
+                }
+
+        </style>
+
+<script>
+                function runPsy()       {
+                        var box1 = document.getElementById("first");
+                        var box2 = document.getElementById("second");
+                        var box3 = document.getElementById("third");
+                        var box4 = document.getElementById("fourth");
+                        var box5 = document.getElementById("fifth");
+
+                        setTimeout(function() { box1.style.backgroundColor = "blue"; }, 200);
+                        setTimeout(function() { box1.style.backgroundColor = "green"; }, 400);
+                        setTimeout(function() { box1.style.backgroundColor = "yellow"; }, 600);
+                        setTimeout(function() { box1.style.backgroundColor = "orange"; }, 800);
+                        setTimeout(function() { box1.style.backgroundColor = "red"; }, 1000);
+                        setTimeout(function() { box1.style.backgroundColor = "white"; }, 1200);
+                        setTimeout(function() { box2.style.backgroundColor = "blue"; }, 400);
+                        setTimeout(function() { box2.style.backgroundColor = "green"; }, 600);
+                        setTimeout(function() { box2.style.backgroundColor = "yellow"; }, 800);
+                        setTimeout(function() { box2.style.backgroundColor = "orange"; }, 900);
+                        setTimeout(function() { box2.style.backgroundColor = "red"; }, 1200);
+                        setTimeout(function() { box2.style.backgroundColor = "white"; },
+1400);                                  setTimeout(function() { box3.style.backgroundColor =
+"blue"; }, 600);
+                        setTimeout(function() { box3.style.backgroundColor = "green"; }, 800);
+                        setTimeout(function() { box3.style.backgroundColor = "yellow"; }, 1000);
+                        setTimeout(function() { box3.style.backgroundColor = "orange"; }, 1200);
+                        setTimeout(function() { box3.style.backgroundColor = "red"; }, 1400);
+                        setTimeout(function() { box3.style.backgroundColor = "white"; },
+1600);                                  setTimeout(function() { box4.style.backgroundColor =
+"blue"; }, 800);
+                        setTimeout(function() { box4.style.backgroundColor = "green"; }, 1000);
+                        setTimeout(function() { box4.style.backgroundColor = "yellow"; }, 1200);
+                        setTimeout(function() { box4.style.backgroundColor = "orange"; }, 1400);
+                        setTimeout(function() { box4.style.backgroundColor = "red"; }, 1600);
+                        setTimeout(function() { box4.style.backgroundColor = "white"; },
+1800);                                  setTimeout(function() { box5.style.backgroundColor =
+"blue"; }, 1000);
+                        setTimeout(function() { box5.style.backgroundColor = "green"; }, 1200);
+                        setTimeout(function() { box5.style.backgroundColor = "yellow"; }, 1400);
+                        setTimeout(function() { box5.style.backgroundColor = "orange"; }, 1600);
+                        setTimeout(function() { box5.style.backgroundColor = "red"; }, 1800);
+                        setTimeout(function() { box5.style.backgroundColor = "white"; }, 2000);
+
+                setInterval(function () {
+
+                        setTimeout(function() { box1.style.backgroundColor = "blue"; }, 200);
+                        setTimeout(function() { box1.style.backgroundColor = "green"; }, 400);
+                        setTimeout(function() { box1.style.backgroundColor = "yellow"; }, 600);
+                        setTimeout(function() { box1.style.backgroundColor = "orange"; }, 800);
+                        setTimeout(function() { box1.style.backgroundColor = "red"; }, 1000);
+                        setTimeout(function() { box1.style.backgroundColor = "white"; }, 1200);
+                        setTimeout(function() { box2.style.backgroundColor = "blue"; }, 400);
+                        setTimeout(function() { box2.style.backgroundColor = "green"; }, 600);
+                        setTimeout(function() { box2.style.backgroundColor = "yellow"; }, 800);
+                        setTimeout(function() { box2.style.backgroundColor = "orange"; }, 900);
+                        setTimeout(function() { box2.style.backgroundColor = "red"; }, 1200);
+                        setTimeout(function() { box2.style.backgroundColor = "white"; },
+1400);                                  setTimeout(function() { box3.style.backgroundColor =
+"blue"; }, 600);
+                        setTimeout(function() { box3.style.backgroundColor = "green"; }, 800);
+                        setTimeout(function() { box3.style.backgroundColor = "yellow"; }, 1000);
+                        setTimeout(function() { box3.style.backgroundColor = "orange"; }, 1200);
+                        setTimeout(function() { box3.style.backgroundColor = "red"; }, 1400);
+                        setTimeout(function() { box3.style.backgroundColor = "white"; },
+1600);                                  setTimeout(function() { box4.style.backgroundColor =
+"blue"; }, 800);
+                        setTimeout(function() { box4.style.backgroundColor = "green"; }, 1000);
+                        setTimeout(function() { box4.style.backgroundColor = "yellow"; }, 1200);
+                        setTimeout(function() { box4.style.backgroundColor = "orange"; }, 1400);
+                        setTimeout(function() { box4.style.backgroundColor = "red"; }, 1600);
+                        setTimeout(function() { box4.style.backgroundColor = "white"; },
+1800);                                  setTimeout(function() { box5.style.backgroundColor =
+"blue"; }, 1000);
+                        setTimeout(function() { box5.style.backgroundColor = "green"; }, 1200);
+                        setTimeout(function() { box5.style.backgroundColor = "yellow"; }, 1400);
+                        setTimeout(function() { box5.style.backgroundColor = "orange"; }, 1600);
+                        setTimeout(function() { box5.style.backgroundColor = "red"; }, 1800);
+                        setTimeout(function() { box5.style.backgroundColor = "white"; }, 2000);
+
+                }, 1600);
+
+                }
+
+        window.onload = runPsy;
+        </script>
+
+
+        <script type="javascript">
+                function runAnimation() {
+                        document.getElementById("info").innerHTML = "Animation Started";
+                        var myrect = document.getElementById("rectAnim");
+                        myrect.classList.add("animate");
+                }
+        </script>
+
+        <script type="javascript">
+                function runAnimation() {
+                        document.getElementById("info").innerHTML = "Animation Started";
+                        var myrect = document.getElementById("rectAnim");
+                        myrect.classList.add("animate");
+                }
+        </script>
+        </head>
+        <body>
+        <div id="wrapper">
+
+        <div id="flippers">
+                <div class=".txformX"></div>
+                <div class=".txformY"></div>
+                <div class=".txformZ"></div>
+        </div>
+        <div id="sliders">
+                <div id="rectAnim"></div>
+        </div>
+        <div id="psy">
+                <div id="first"></div>
+                <div id="second"></div>
+                <div id="third"></div>
+                <div id="fourth"></div>
+                <div id="fifth"></div>
+        </div>
+        </div>
+
+        </body>
+        </html>
